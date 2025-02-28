@@ -1,19 +1,20 @@
 const button = document.querySelector('#submit');
 const form = document.querySelector('#description');
 
+
 let quoteCount = 0;
 
 form.addEventListener('submit', (event) => {
     let author = document.querySelector('#auteur').value;
     let quote = document.querySelector('#citation').value;
-    console.log(quote,author); 
-
+    //console.log(quote,author); 
+    event.preventDefault();
     addQuote(quote, author);
 })
 
-
   function addQuote(quote, author) {
     quoteCount++;
+    console.log(quoteCount);
 
     const count = document.getElementById('count');
     count.innerText = quoteCount + " " + "citations";
